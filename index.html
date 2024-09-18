@@ -2,229 +2,262 @@
 <html lang="en">
 
 <head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- site metas -->
-   <title>MAIN-INDEX-WATCH</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
-   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-   <!-- style css -->
-   <link rel="stylesheet" type="text/css" href="css/style.css">
-   <!-- Responsive -->
-   <link rel="stylesheet" href="css/responsive.css">
-   <!-- favicon -->
-   <link rel="icon" href="images/fevicon.png" type="image/gif" />
-   <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-   <!-- Tweaks for older IEs -->
-   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-   <!-- fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-   <!-- owl stylesheets -->
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <link rel="stylesheet" href="css/owl.theme.default.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
-      media="screen">
+    <link rel="icon" href="./Home-image/home page icon.png">
+
+    <title> HOME PAGE</title>
+    <style>
+        /* BODY */
+        body {
+            background-image: url(./Home-image/pexels-life-of-pix-42408.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            color: #050505;
+            margin-left: 108px;
+            font-size: 50px;
+            margin-top: 290px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h2 {
+            color: rgb(50, 216, 216);
+            margin-left: 108px;
+            margin-top: -20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        /* HOME DIV  */
+        div {
+            display: flex;
+            flex-direction: row;
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3e2093;
+            font-size: 25px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0 10px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        /* PROJECT A */
+
+        .home {
+            margin-top: 40px;
+        }
+
+        .Projects {
+            margin-left: 40px;
+            margin-top: 40px;
+        }
+
+        .About {
+            margin-left: 40px;
+            margin-top: 40px;
+        }
+
+        .Contact {
+            margin-left: 40px;
+            margin-top: 40px;
+   
+        }
+
+        /* MEDIA  */
+        @media (max-width: 768px) {
+            h1 {
+
+                font-size: 36px;
+                margin-top: 100px;
+                margin-left: 20px;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 18px;
+                margin-left: 20px;
+                text-align: center;
+                margin-top: 10px;
+                color: #000000;
+            }
+
+            div {
+                flex-direction: column;
+                align-items: center;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            a {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+            /* HOME ,PRO , ABO  CON  */
+            .home,
+            .Projects,
+            .About,
+            .Contact {
+                margin-left: 0;
+            }
+        }
+
+        /* Styling for the header */
+
+        /* Global CSS reset */
+        a {
+            display: inline-block;
+
+
+            /* Add padding */
+            text-transform: uppercase;
+            /* Transform text to uppercase */
+            letter-spacing: 4px;
+            /* Add letter spacing */
+            color: #000000;
+            /* Text color */
+            font-size: 1.rem;
+            /* Font size */
+            font-weight: bold;
+
+        }
+
+        /* Styling for the navigation links on hover */
+        a:hover {
+            background-color: #00a49f;
+            /* Background color on hover */
+            color: #ffffff;
+            /* Text color on hover */
+            box-shadow: 0 0 5px #019e96, 0 0 25px #00979f, 0 0 50px #03e9f4, 0 0 200px #028f8f;
+            /* Box shadow on hover */
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+            /* Reflection effect */
+        }
+
+        /* Add hue rotation to first and last navigation links */
+        a:first-child {
+            filter: hue-rotate(225deg);
+        }
+
+        a:last-child {
+            filter: hue-rotate(90deg);
+        }
+
+        /* Styling for the animated spans within the links */
+        a span {
+            position: absolute;
+            display: block;
+        }
+
+        /* Animation for first span */
+        a span:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #e54012);
+            animation: animate1 1s infinite;
+            /* Apply animation */
+        }
+
+        /* Animation for second span */
+        @keyframes animate1 {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Animation for second span */
+        a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #f56213);
+            animation: animate2 1s infinite;
+            animation-delay: .25s;
+            /* Delay animation */
+        }
+
+        @keyframes animate2 {
+            0% {
+                top: -100%;
+            }
+
+            100% {
+                top: 100%;
+            }
+        }
+
+        /* Animation for third span */
+        a span:nth-child(3) {
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(20deg, transparent, #f56213);
+            animation: animate3 1s infinite;
+            animation-delay: 0.5s;
+            /* Delay animation */
+        }
+
+        @keyframes animate3 {
+            0% {
+                right: -100%;
+            }
+
+            100% {
+                right: 100%;
+            }
+        }
+
+        /* Animation for fourth span */
+        a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #f56213);
+            animation: animate4 1s infinite;
+            animation-delay: .75s;
+            /* Delay animation */
+        }
+
+        @keyframes animate4 {
+            0% {
+                bottom: -100%;
+            }
+
+            100% {
+                bottom: 100%;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
-   <!-- header section start -->
-   <div class="header_section">
-      <div class="header_main">
-         <div class="mobile_menu">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="watchs.html">Watchs</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                     </li>
-                  </ul>
-               </div>
-            </nav>
-         </div>
-         <div class="container-fluid">
-            <div class="menu_main">
-               <ul>
-                  <li class="active"><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="watchs.html">Watchs</a></li>
-                  <li><a href="contact.html">Contact us</a></li>
-               </ul>
-            </div>
-         </div>
-      </div>
-      <!-- banner section start -->
-      <div class="banner_section layout_padding">
-         <div id="main_slider" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container">
-                     <h1 class="banner_taital">Analog Watchs <img style="border-radius: 50%; margin-top: -15px;"
-                           height="150px" width="130px" src="./onee.png " alt=""></h1>
+    <!--  H1  -->
+    <h1>Lucky Nakade</h1>
+    <!-- H2  -->
+    <h2>I'm a Student</h2>
 
+    <!-- HOME DIV -->
+    <div>
+        <a class="home" href="#">HOME</a>
+        <a class="Projects" href="./main.html">PROJECT</a>
+        <a class="About" href="./about.html">ABOUT</a>
+        <a class="Contact" href="./contact.html">CONTACT</a>
+    </div>
 
-                     <p class="banner_text"></p>
-                     <div class="read_bt"><a href="#">Buy Now</a></div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="banner_taital">Digital Watchs <img style="border-radius: 50%; margin-top: -15px;"
-                           height="150px" width="130px" src="./images/digital-one.png" alt=""></h1>
-                     <p class="banner_text"></p>
-                     <div class="read_bt"><a href="#">Buy Now</a></div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="container">
-                     <h1 class="banner_taital">Smart Watchs <img style="border-radius: 50%; margin-top: -15px;"
-                           height="150px" width="130px" src="./images/samart-onepng.png" alt=""></h1>
-
-                     <p class="banner_text"></p>
-                     <div class="read_bt"><a href="#">Buy Now</a></div>
-                  </div>
-               </div>
-            </div>
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-               <i class="fa fa-plus" style="font-size:24px; color: #fff;"></i>
-            </a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-               <i class="fa fa-minus" style="font-size:24px; color: #fff;"></i>
-            </a>
-         </div>
-      </div>
-      <!-- banner section end -->
-   </div>
-   <!-- header section end -->
-   <!-- background bg start -->
-   <div class="background_bg">
-      <!-- watchs section start -->
-      <div class="watchs_section layout_padding">
-         <div class="container">
-            <h1 class="watchs_taital">Our Watchs</h1>
-            <div class="watchs_section_2">
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="image_1"><img src="images/img-1.png" alt="Analog Watch"></div>
-                  </div>
-                  <div class="col-md-6">
-                     <h4 class="uni_text">Analog Watchs</h4>
-                     <p class="watchs_text">An analog watch is one in which the display is not digital, but is indicated
-                        (typically) by the continuous motion of one, two, or three rotating pointers or hands pointing
-                        to numbers arrayed on a circular dial the hour hand's movement being analogous to the path of
-                        the sun across the sky.</p>
-                     <div class="read_bt1">  </div>
-                  </div>
-               </div>
-            </div>
-            <div class="watchs_section_3">
-               <div class="row">
-                  <div class="col-md-6">
-                     <h4 class="uni_text">Smart Watch</h4>
-                     <p class="watchs_text">A smartwatch is a portable wearable computer device in the form of a
-                        wristwatch. Most modern smartwatches are operated via a touchscreen, and are often reliant on
-                        mobile apps that run on a connected device such as a smartphone to provide some core functions.
-                     </p>
-                     <div class="read_bt1"> </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="image_2"><img src="images/img-2.png" alt="Smart Watch"></div>
-                  </div>
-               </div>
-            </div>
-            <div class="watchs_section_2">
-
-            </div>
-            <div class="watchs_section_2">
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="image_1"><img src="./images/digital-one.png" alt="Analog Watch"></div>
-                  </div>
-                  <div class="col-md-6">
-                     <h4 class="uni_text">Digiatl Watchs</h4>
-                     <p class="watchs_text">A digital display shows the time as a number, e.g., 12:08 instead of a
-                        shorthand pointing towards the number 12 and a long hand 8/60 of the way around the dial. The
-                        digits are usually shown as a seven-segment display.
-
-                        The first digital mechanical pocket watches appeared in the late 19th century. In the 1920s, the
-                        first digital mechanical wristwatches appeared.</p>
-                     <div class="read_bt1"> </div>
-                  </div>
-               </div>
-            </div>
-            <!-- watchs section end -->
-            <!-- about section start -->
-
-            <!-- about section end -->
-            <!-- testimonial section start -->
-
-         </div>
-      </div>
-   </div>
-   </div>
-   </div>
-   </div>
-   </div>
-   <!-- testimonial section end -->
-   <!-- contact section start -->
-
-   </div>
-   </div>
-   </div>
-   </div>
-   <!-- contact section end -->
-   </div>
-   <!-- background bg end -->
-   <!-- footer section start -->
-   <div style="background-color: rgb(255, 81, 0);" class="footer_section layout_padding">
-      <div class="container">
-         <h3 class="follow_text">Follow Now</h3>
-         <div class="social_icon">
-            <ul>
-               <li><a href=""><img src="images/fb-icon.png"></a></li>
-
-               <li><a href="https://www.instagram.com/explore/locations/177530852932870/prakash-radio-and-watch/"><img src="images/instagram-icon.png"></a></li>
-            </ul>
-         </div>
-
-      </div>
-      <!-- footer section end -->
-      <!-- copyright section start -->
-      <div class="copyright_section">
-         <div class="container">
-         </div>
-      </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
-      <!-- javascript -->
-      <script src="js/owl.carousel.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
 
 </html>

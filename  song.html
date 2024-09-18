@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>music play </title>
+  <style>
+    /* button */
+
+    .main {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      height: 54vh;
+      background-image: url(./Home-image/computer.png);
+      width: 31vw;
+      margin-left: 300px;
+      margin-top: 100px;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+
+
+    }
+
+    /* body */
+    body {
+      background-image: url(../my_image/BBBB.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+
+    }
+
+    /* volume */
+    .volume {
+      margin-left: 450px;
+
+    }
+
+    v {
+      height: 2vh;
+      width: 8vw;
+    }
+
+    .one {
+      margin-top: 204px;
+      margin-left: -175px;
+    }
+
+    .one1 {
+      margin-top: 205px;
+      margin-left: -10px;
+    }
+
+    .one2 {
+      margin-top: 204px;
+      margin-left: -15px;
+    }
+
+    .one3 {
+      margin-top: 204px;
+      margin-left: -15px;
+    }
+
+    /* button */
+    .button {
+      border-radius: 150%;
+      height: 70px;
+      width: 10px;
+
+    }
+
+    .option {
+      font-family: 'Courier New', Courier, monospace;
+      margin-top: 67px;
+      width: 160px;
+      margin-left: 103px;
+
+
+
+    }
+
+    body {
+      background-color: rgb(159, 137, 123);
+    }
+  </style>
+
+</head>
+
+<!-- BODY  -->
+
+<body>
+
+  <audio id="myAudio"></audio>
+  <!-- DIV-CLASS -->
+  <div class="main">
+    <!-- option -->
+    <div class="option">
+      <select id="options" onchange="openLink()">
+        <option> OPTIONS👁️‍🗨️ CHOSE YOUR APP 🎵 </option>
+        <option value="https://www.youtube.com/"> YOUTUBE 🎧 ⟿</option>
+        <option value="https://music.youtube.com/"> MUSIC 🎧 ⟿</option>
+        <option value="https://open.spotify.com/"> SPOTIFY 🎧 ⟿</option>
+        <option value="https://gaana.com/"> GAANA 🎧 ⟿</option>
+        <option value="https://www.jiosaavn.com/"> JIOSAAVN 🎧 ⟿</option>
+
+      </select>
+    </div>
+
+    <div class="one" onclick="previousAudio()"><img style=" border-radius: 50%;" src="./Home-image/previouspng.png"
+        height="72px" width="80px"></div>
+    <div class="one1" onclick="playAudio()"><img style=" border-radius: 50%;" src="./Home-image/playp.png" height="70px"
+        width="80px"></div>
+    <div class="one2" onclick="pauseAudio()"><img style=" border-radius: 50%;" src="./Home-image/stop.png" height="70px"
+        width="80px"></div>
+    <div class="one3" onclick="nextSong()"><img style=" border-radius: 50%;" src="./Home-image/next.png" height="70px "
+        width="80px"></div>
+
+  </div>
+
+  <!--  lable -->
+
+  <label class="volume" for="range"></label>
+  <input class="v" type="range" min="0" max="2" step="0.1" value="1">
+
+  <!--script  -->
+  <script>
+
+    function openLink() {
+      var selectBox = document.getElementById("options");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      window.open(selectedValue, "_blank");
+    }
+
+
+
+    let songs = ["image_project/Silsila Ye Chahat Ka - Remix-(PagalSongs.Com.IN).mp3", "image_project/Game - Sidhu Moose Wala (1).mp3", "image_project/Besharam Bewaffa 128 Kbps.mp3", "image_project/128-Main Rang Sharbaton Ka - Phata Poster Nikhla Hero 128 Kbps.mp3", "image_project/Tu Hai Kahan(PagalWorld.com.pe).mp3  "];
+    let currentSongIndex = 0;
+    const audio = document.getElementById("myAudio");
+    // play
+    function playAudio() {
+      audio.play();
+    }
+    // pause
+    function pauseAudio() {
+      audio.pause();
+    }
+    // next
+    function nextSong() {
+      currentSongIndex = (currentSongIndex + 1) % songs.length;
+      audio.src = songs[currentSongIndex];
+      audio.play();
+    }
+    // previous
+    function previousAudio() {
+      if (currentSongIndex > 0) {
+        currentSongIndex--;
+      } else {
+        currentSongIndex = songs.length - 1;
+      }
+      audio.src = songs[currentSongIndex];
+      audio.play();
+    }
+    // close 
+  </script>
+  </div>
+</body>
+
+</html>
